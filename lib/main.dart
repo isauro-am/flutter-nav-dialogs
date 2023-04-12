@@ -56,21 +56,23 @@ class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
-          ListTile(
-            trailing: const Icon(Icons.arrow_forward_ios),
-            title: const Text('Go to login page'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => const LoginPage(),
-                ),
-              );
-            },
-          ),
-        ],
+      body: SafeArea(
+        child: ListView(
+          children: [
+            ListTile(
+              trailing: const Icon(Icons.arrow_forward_ios),
+              title: const Text('Go to login page'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const LoginPage(),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
